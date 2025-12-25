@@ -28,7 +28,7 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 
-⚙️ Installation
+## ⚙️ Installation
 
 1️⃣ Clone the repository:
 
@@ -40,7 +40,7 @@ cd shodan-domain-recon
 
 pip install -r requirements.txt
 
-🔐 Configuration (IMPORTANT)
+## 🔐 Configuration (IMPORTANT)
 
 You must set your Shodan API Key as an environment variable.
 
@@ -56,13 +56,13 @@ setx SHODAN_API_KEY "YOUR_API_KEY_HERE"
 
 ⚠️ Close and reopen the terminal after setting the variable.
 
-🚀 Usage
+## 🚀 Usage
 
 Run the script providing a domain as argument:
 
 python shodan_domain_recon.py example.com
 
-📄 Output
+## 📄 Output
 
 Results are automatically saved to:
 
