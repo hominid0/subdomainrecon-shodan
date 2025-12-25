@@ -24,8 +24,6 @@ Designed for bug bounty, responsible disclosure, and security research workflows
 - 🔑 Shodan API Key
 
 Install dependencies:
-
-```bash
 pip install -r requirements.txt
 
 ## ⚙️ Installation
