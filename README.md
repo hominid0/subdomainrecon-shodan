@@ -1,98 +1,61 @@
-# 🔍 Shodan Domain Recon
+# Reconocimiento de Subdominios en Shodan
 
-Passive OSINT tool to enumerate all Shodan-indexed information related to a domain.
-Designed for bug bounty, responsible disclosure, and security research workflows.
+Herramienta OSINT pasiva para enumerar todos los subdominios indexados por Shodan de un dominio. Diseñada para bug bounty, divulgación responsable y workflows de investigación de seguridad.
 
----
+## Características
 
-## ✨ Features
+- Enumeración pasiva de subdominios DNS (Shodan DNS)
+- Solo muestra URLs completas: https://subdominio.dominio.com
+- 100% pasivo (sin escaneo activo)
+- Resultados guardados por dominio en results/
+- Rápido y ligero: usa directamente la API de Shodan
 
-- 🌐 Passive DNS subdomain enumeration (Shodan DNS)
-- 🔁 Domain → IP resolution
-- 🔎 Shodan search using domain-based queries
-- 🧩 Shodan host enumeration (ports, services, metadata)
-- 🧾 HTTP headers and SSL certificate extraction
-- 💤 Fully passive (no active scanning)
-- 💾 Results saved per domain
+## Requisitos
 
----
+- Python 3.9+
+- Clave API de Shodan (puedes verla en tu cuenta de Shodan)
 
-## 📦 Requirements
+## 🚀 Instrucciones de Uso COMPLETAS
 
-- 🐍 Python 3.9+
-- 🔑 Shodan API Key
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-## ⚙️ Installation
-
-1️⃣ Clone the repository:
-```bash
-git clone https://github.com/hominid0/shodan-domain-recon.git
-cd shodan-domain-recon
+### ✅ 1) Clonar el repositorio
 ```
-2️⃣ Install dependencies:
-```bash
+git clone https://github.com/hominid0/subdomainrecon-shodan.git
+cd subdomainrecon-shodan
+```
+
+### 🐍 2) Crear y activar entorno virtual (recomendado)
+```
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate     # Windows (PowerShell/cmd)
+```
+
+### 📦 3) Instalar dependencias
+```
 pip install -r requirements.txt
 ```
-## 🔐 Configuration (IMPORTANT)
 
-You must set your Shodan API Key as an environment variable.
-
-### 🐧 Linux / macOS
-
-```bash
-export SHODAN_API_KEY="YOUR_API_KEY_HERE"
+### 🔑 4) Configurar la API Key de Shodan (OBLIGATORIO)
+```
+export SHODAN_API_KEY="TU_API_KEY_AQUI"  # Linux/Mac
+# $env:SHODAN_API_KEY="TU_API_KEY_AQUI"  # Windows PowerShell
 ```
 
-### 🪟 Windows (PowerShell)
-
-```powershell
-setx SHODAN_API_KEY "YOUR_API_KEY_HERE"
+### ▶️ 5) Ejecutar el script
+```
+python subdomainrecon_shodan.py example.com
 ```
 
-⚠️ Close and reopen the terminal after setting the variable.
-
-## 🚀 Usage
-
-Run the script providing a domain as argument:
-
-```bash
-python shodan_domain_recon.py example.com
+### 📁 6) Ver resultados
+```
+ls -la results/
+cat results/example.com.txt
 ```
 
----
-
-## 📄 Output
-
-Results are automatically saved to:
-
+### 🛑 7) Salir del entorno virtual (opcional)
 ```
-results/example.com.txt
+deactivate
 ```
-
-The report may include:
-
-- 📌 Discovered subdomains
-- 🌍 IP addresses
-- 🔓 Open ports and exposed services
-- 🧠 Product and version fingerprints
-- 🌐 HTTP titles and server headers
-- 🔐 SSL certificate metadata
-- 🏢 ASN / ISP / Organization info
-
-## 🗂️ Project structure
-
-```
-shodan-domain-recon/
-├── shodan_domain_recon.py
-├── requirements.txt
-├── README.md
-├── LICENSE
-├── .gitignore
-└── results/        # created automatically
 ```
 
 ## ⚠️ Legal disclaimer
